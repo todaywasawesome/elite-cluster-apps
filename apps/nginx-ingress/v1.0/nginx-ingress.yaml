@@ -11,6 +11,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: nginx-ingress-ingress-nginx
+  namespace: kube-system
 automountServiceAccountToken: true
 ---
 # Source: ingress-nginx/templates/controller-configmap.yaml
@@ -25,6 +26,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: nginx-ingress-ingress-nginx-controller
+  namespace: kube-system
 data:
 ---
 # Source: ingress-nginx/templates/clusterrole.yaml
@@ -38,6 +40,7 @@ metadata:
     app.kubernetes.io/version: "0.45.0"
     app.kubernetes.io/managed-by: Helm
   name: nginx-ingress-ingress-nginx
+  namespace: kube-system
 rules:
   - apiGroups:
       - ""
@@ -107,6 +110,7 @@ metadata:
     app.kubernetes.io/version: "0.45.0"
     app.kubernetes.io/managed-by: Helm
   name: nginx-ingress-ingress-nginx
+  namespace: kube-system
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -128,6 +132,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: nginx-ingress-ingress-nginx
+  namespace: kube-system
 rules:
   - apiGroups:
       - ""
@@ -213,6 +218,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: nginx-ingress-ingress-nginx
+  namespace: kube-system
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -234,6 +240,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: nginx-ingress-ingress-nginx-controller-admission
+  namespace: kube-system
 spec:
   type: ClusterIP
   ports:
@@ -258,6 +265,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: nginx-ingress-ingress-nginx-controller
+  namespace: kube-system
 spec:
   type: NodePort
   ports:
@@ -404,6 +412,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   name: nginx-ingress-ingress-nginx-admission
+  namespace: kube-system
 webhooks:
   - name: validate.nginx.ingress.kubernetes.io
     matchPolicy: Equivalent
