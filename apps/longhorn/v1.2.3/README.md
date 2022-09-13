@@ -1,0 +1,1 @@
+helm upgrade --install longhorn longhorn --repo https://charts.longhorn.io --namespace longhorn-system --create-namespace
